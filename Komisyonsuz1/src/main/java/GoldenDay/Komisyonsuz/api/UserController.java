@@ -81,7 +81,7 @@ public class UserController {
 	}
 	
 	@GetMapping("/findByName")
-	public DataResult<User> findByName(String name){
+	public DataResult<List<User>> findByName(String name){
 		
 		return this.userService.findByName(name);
 	}

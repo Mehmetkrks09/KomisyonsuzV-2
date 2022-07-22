@@ -172,9 +172,9 @@ public class UserManager implements UserService {
 
 	
 	@Override
-	public DataResult<User> findByName(String name) {
+	public DataResult<List<User>> findByName(String name) {
 
-     return new SuccessDataResult<User>(this.userDao.findByName(name));
+     return new SuccessDataResult<List<User>>(this.userDao.findByName(name));
 	}
 	
 	

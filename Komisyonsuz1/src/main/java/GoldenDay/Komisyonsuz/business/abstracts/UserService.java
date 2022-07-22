@@ -21,6 +21,6 @@ public interface UserService {
 	//DataResult<List<User>> getByNameAndCreateDay_id(String name ,int id);
 	DataResult<List<User>> getByCreateDay_id(int id);
 	
-    DataResult< User> findByName(String name);
+    DataResult<List< User>> findByName(String name);
 	
 }
