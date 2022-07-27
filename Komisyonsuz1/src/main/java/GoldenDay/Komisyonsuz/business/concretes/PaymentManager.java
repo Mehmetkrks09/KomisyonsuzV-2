@@ -39,7 +39,7 @@ public class PaymentManager implements PaymentService {
 		Payment payment = new Payment();
 		payment.setId(paymentDto.getId());
 		payment.setState(paymentDto.getState());
-		payment.setUser(userDao.findById(paymentDto.getUserİd()));
+		//payment.setUser(userDao.findById(paymentDto.getUserİd()));
 		payment.setCreateDay(createDayDao.getById(paymentDto.getDayId()));
 		this.paymentDao.save(payment);
 		

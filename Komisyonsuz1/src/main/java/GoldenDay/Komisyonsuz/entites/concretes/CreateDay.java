@@ -45,9 +45,9 @@ public class CreateDay {
 	@Column(name="month")
 	private int month;
 	
-//	@Column(name="userId")
-//	private int userId;
-	
+////	@Column(name="userId")
+////	private int userId;
+//	
 	@Column(name="userQueue")
 	private int UserQueu;
 	
@@ -62,6 +62,6 @@ public class CreateDay {
 //	private User user;
 
 
-	@OneToMany(mappedBy = "createDay")
-	private List<User> user;
+//	@OneToMany(mappedBy = "createDay")
+//	private List<User> user;
 }

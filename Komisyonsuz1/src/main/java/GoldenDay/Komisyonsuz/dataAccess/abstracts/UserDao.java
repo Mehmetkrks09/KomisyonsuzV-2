@@ -13,8 +13,8 @@ public interface UserDao extends JpaRepository<User,Integer> {
 	boolean existsByemail(String email);
 	boolean existsByidentityNumber(String identityNumber);
 	List<User> getById(int id);
-	List<User> getByCreateDay_id(int id);
-	User findByCreateDay_id(int id);
+	//List<User> getByCreateDay_id(int id);
+	//User findByCreateDay_id(int id);
 	List<User> findByName(String name);
 //	User getByName(String name);
 }

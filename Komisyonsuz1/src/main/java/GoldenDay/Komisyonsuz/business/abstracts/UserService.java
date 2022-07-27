@@ -19,7 +19,7 @@ public interface UserService {
 	DataResult<List<User>> getAll();
 	DataResult< User> findById(int id);
 	//DataResult<List<User>> getByNameAndCreateDay_id(String name ,int id);
-	DataResult<List<User>> getByCreateDay_id(int id);
+	//DataResult<List<User>> getByCreateDay_id(int id);
 	
     DataResult<List< User>> findByName(String name);
 	

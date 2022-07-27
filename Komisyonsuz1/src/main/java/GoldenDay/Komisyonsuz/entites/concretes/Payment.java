@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name="Payment")
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler","createDay"})
+
 public class Payment {
 
 	@Id

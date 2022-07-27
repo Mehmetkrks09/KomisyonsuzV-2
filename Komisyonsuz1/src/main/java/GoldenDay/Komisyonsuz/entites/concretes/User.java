@@ -70,9 +70,9 @@ public class User {
 	@OneToMany(mappedBy = "user")
 	private List<Payment> payment;
 	
-	@ManyToOne()
-	//@JsonIgnore()
-	@JoinColumn(name = "day_id")
-	private CreateDay createDay;
+//	@ManyToOne()
+//	@JsonIgnore()
+//	@JoinColumn(name = "day_id")
+//	private CreateDay createDay;
 	
 }

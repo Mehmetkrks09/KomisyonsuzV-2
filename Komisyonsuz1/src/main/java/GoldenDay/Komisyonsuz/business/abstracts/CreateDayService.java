@@ -18,7 +18,7 @@ public interface CreateDayService {
 
 	
 	DataResult<List<CreateDay>> getByMonth(int id);
-	DataResult<List<CreateDay>> getByUserId(int id);
+//	DataResult<List<CreateDay>> getByUserId(int id);
 	
 
 }

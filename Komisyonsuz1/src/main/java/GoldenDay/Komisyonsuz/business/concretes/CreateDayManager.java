@@ -61,13 +61,13 @@ public class CreateDayManager implements CreateDayService {
 		return new SuccessDataResult<List<CreateDay>>(this.createDayDao.getByMonth(id));
 	}
 
-	@Override
-	public DataResult<List<CreateDay>> getByUserId(int id) {
-		 return new
-		 SuccessDataResult<List<CreateDay>>(this.createDayDao.getByUser_id(id));
-
-
-	}
+//	@Override
+//	public DataResult<List<CreateDay>> getByUserId(int id) {
+//		 return new
+//		 SuccessDataResult<List<CreateDay>>(this.createDayDao.getByUser_id(id));
+//
+//
+//	}
 
 	@Override
 	public Result delete(int id) {
@@ -87,7 +87,7 @@ public class CreateDayManager implements CreateDayService {
 		createDay.setMonth(createDayUpdate.getMonth());
 		createDay.setUserQueu(createDayUpdate.getUserQueu());
 		createDay.setPayment(paymentDao.findById(createDayUpdate.getPaymentId()));
-		createDay.setUser(userDao.getById(createDayUpdate.getUserId()));
+	//	createDay.setUser(userDao.getById(createDayUpdate.getUserId()));
 		this.createDayDao.save(createDay);
 
 		return new SuccessResult("Başarıyla Güncellendi");

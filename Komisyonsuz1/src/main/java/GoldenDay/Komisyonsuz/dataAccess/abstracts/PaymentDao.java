@@ -16,5 +16,7 @@ public interface PaymentDao  extends JpaRepository<Payment,Integer>{
 	
 	List<Payment> getByuserİd(int id);
 	List<Payment> getByStateTrue();
+	//List<Payment> getByUser_id();
 	
 }
+ 

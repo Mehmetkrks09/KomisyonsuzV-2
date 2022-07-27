@@ -92,8 +92,8 @@ public class UserManager implements UserService {
 			user.setIdentityNumber(userDto.getIdentityNumber());
 			user.setPassword(userDto.getPassword());
 			user.setPhoto(userDto.getPhoto());
-			user.setCreateDay(createDayDao.getById(userDto.getDayId()));
-			user.setPayment(paymentDao.findById(userDto.getPaymentId()));
+			//user.setCreateDay(createDayDao.getById(userDto.getDayId()));
+			//user.setPayment(paymentDao.findById(userDto.getPaymentId()));
 
 			this.userDao.save(user);
 
@@ -101,7 +101,7 @@ public class UserManager implements UserService {
 
 		}
 	}
-
+  
 	@Override
 	public DataResult<List<User>> getAll() {
 		return new SuccessDataResult<List<User>>(this.userDao.findAll(), "Users Listed");
@@ -144,9 +144,9 @@ public class UserManager implements UserService {
 		
 		user.setPhoto(userUpdate.getPhoto());
 		
-		user.setCreateDay(createDayDao.getById(userUpdate.getDayId()));
+		//user.setCreateDay(createDayDao.getById(userUpdate.getDayId()));
 		
-		user.setPayment(paymentDao.findById(userUpdate.getPaymentId()));
+	//	user.setPayment(paymentDao.findById(userUpdate.getPaymentId()));
 		
 		this.userDao.save(user);
 		return new SuccessResult("Başarıyla Güncellendi");
@@ -164,11 +164,11 @@ public class UserManager implements UserService {
 	
 	
 	
-	@Override
-	public DataResult<List<User>> getByCreateDay_id(int id) {
-
-      return new SuccessDataResult<List<User>>(this.userDao.getByCreateDay_id( id),"Başarıyla Listelendi");
-	}
+//	@Override
+//	public DataResult<List<User>> getByCreateDay_id(int id) {
+//
+//      return new SuccessDataResult<List<User>>(this.userDao.getByCreateDay_id( id),"Başarıyla Listelendi");
+//	}
 
 	
 	@Override

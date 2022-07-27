@@ -74,11 +74,11 @@ public class UserController {
 		return this.userService.delete(id);
 	}
 	
-	@GetMapping("/getByCreateDay_id")
-	public DataResult<List<User>> getByCreateDay_id(@RequestParam int id){
-		
-		return this.userService.getByCreateDay_id(id);
-	}
+//	@GetMapping("/getByCreateDay_id")
+//	public DataResult<List<User>> getByCreateDay_id(@RequestParam int id){
+//		
+//		return this.userService.getByCreateDay_id(id);
+//	}
 	
 	@GetMapping("/findByName")
 	public DataResult<List<User>> findByName(String name){

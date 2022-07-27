@@ -46,11 +46,11 @@ public class CreateDayController {
 		return this.createDayService.getByMonth(id);
 	}
 	
-	@GetMapping("/getByUserId")
-	public DataResult<List<CreateDay>> getByUserId(@RequestParam int id) {
-		return this.createDayService.getByUserId(id);
-	}
-	
+//	@GetMapping("/getByUserId")
+//	public DataResult<List<CreateDay>> getByUserId(@RequestParam int id) {
+//		return this.createDayService.getByUserId(id);
+//	}
+	 
 	@GetMapping("/getById")
 	public DataResult< CreateDay>getById(@RequestParam int id) {
 		
