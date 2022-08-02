@@ -67,13 +67,27 @@ public class PaymentManager implements PaymentService {
 
 	@Override
 	public DataResult<List<Payment>> getByuserİd(int id) {
-		return new SuccessDataResult<List<Payment>>(this.paymentDao.getByuserİd(id), "Başarılı Şekide Getirildi");
+		return new SuccessDataResult<List<Payment>>(this.paymentDao.getByuserİd(id),"User Id ye Göre Sıralandı");
 	}
 
 	@Override
 	public DataResult<List<Payment>> getByStateTrue() {
 		return new SuccessDataResult<List<Payment>>(this.paymentDao.getByStateTrue(),
 				"Ödeme Durumu Kabul Edilenler Listelendi");
+	}
+
+	@Override
+	public Result paymentUpdate(PaymentDto paymentUpdate) {
+		
+         Payment payment = new Payment();
+		
+         
+		payment.setState(paymentUpdate.getState());
+		payment.setCreateDay(createDayDao.getById(paymentUpdate.getDayId()));
+		payment.setUser(userDao.findById(paymentUpdate.getUserİd()));
+		paymentDao.save(payment);
+		return new SuccessResult("Başarıyla Eklendi");
+		
 	}
 
 	

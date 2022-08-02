@@ -179,6 +179,13 @@ public class UserManager implements UserService {
 	
 	
 	
+	@Override
+	public DataResult<User> findByEmail(String mail) {
+
+    return new SuccessDataResult<User>(userDao.findByEmail(mail),"Başarıyla Getirildi");
+	}
+	
+	
 	// ------------------------------Validation--------------------------------------------------------------------------------------
 	public boolean isAllFieldsFilled(UserDto user) {
 
@@ -189,6 +196,8 @@ public class UserManager implements UserService {
 
 		return true;
 	}
+
+	
 
 	
 

@@ -12,9 +12,9 @@ public interface PaymentService {
 	Result add(PaymentDto paymentDto);
 	DataResult<List<Payment>> getAll();
 	DataResult< Payment> getById(int id);
-
 	
 	
+	Result paymentUpdate(PaymentDto paymentUpdate);
 	DataResult<List<Payment>> findByCreateDay(int id); 
 	DataResult<List<Payment>> getByuserİd(int id);
 	DataResult<List<Payment>> getByStateTrue();

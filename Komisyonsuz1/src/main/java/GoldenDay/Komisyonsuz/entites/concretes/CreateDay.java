@@ -27,7 +27,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Table(name="CreateDay")
 
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler","user","payment"})
+//@JsonIgnoreProperties({"hibernateLazyInitializer","handler","user","payment"})
 //@JsonIgnoreProperties({"hibernateLazyInitializer","handler","payment"})
 
 public class CreateDay {
@@ -45,18 +45,18 @@ public class CreateDay {
 	@Column(name="month")
 	private int month;
 	
-////	@Column(name="userId")
-////	private int userId;
-//	
+	@Column(name="userId")
+	private int userId;
+	
 	@Column(name="userQueue")
 	private int UserQueu;
 	
 
-	//@JsonIgnore()
+	@JsonIgnore()
 	@OneToMany(mappedBy = "createDay")
 	private List<Payment> payment;
 
-//	@ManyToOne()
+//	@ManyToOne() 
 //	//@JsonIgnore()
 //	@JoinColumn(name = "user_id")
 //	private User user;

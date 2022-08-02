@@ -22,5 +22,6 @@ public interface UserService {
 	//DataResult<List<User>> getByCreateDay_id(int id);
 	
     DataResult<List< User>> findByName(String name);
+	DataResult <User> findByEmail(String mail);
 	
 }

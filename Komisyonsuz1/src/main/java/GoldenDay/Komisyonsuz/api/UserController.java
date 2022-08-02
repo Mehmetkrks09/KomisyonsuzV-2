@@ -94,5 +94,12 @@ public class UserController {
 	}
 	
 	
+	@GetMapping("/findByMail")  
+	public DataResult<User> findByEmail(String mail){
+		
+		return this.userService.findByEmail(mail);
+	}
+	
+	
 	
 }

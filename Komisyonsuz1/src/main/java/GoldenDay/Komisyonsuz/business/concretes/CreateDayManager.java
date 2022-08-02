@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import GoldenDay.Komisyonsuz.business.abstracts.CreateDayService;
 import GoldenDay.Komisyonsuz.core.results.DataResult;
+import GoldenDay.Komisyonsuz.core.results.ErrorDataResult;
+import GoldenDay.Komisyonsuz.core.results.ErrorResult;
 import GoldenDay.Komisyonsuz.core.results.Result;
 import GoldenDay.Komisyonsuz.core.results.SuccessDataResult;
 import GoldenDay.Komisyonsuz.core.results.SuccessResult;
@@ -33,6 +35,13 @@ public class CreateDayManager implements CreateDayService {
 
 	@Override
 	public Result add(CreateDayDto createDayDto) {
+		
+		if(createDayDao.existsByuserId(createDayDto.getUserId()))
+		{
+			return new ErrorResult("1 Güne Katılabilirsiniz ");
+		}
+		else {
+		
 		CreateDay createDay = new CreateDay();
 		createDay.setId(createDayDto.getId());
 
@@ -40,10 +49,10 @@ public class CreateDayManager implements CreateDayService {
 		createDay.setMonth(createDayDto.getMonth());
 		createDay.setUserQueu(createDayDto.getUserQueu());
 		createDay.setPayment(paymentDao.findById(createDayDto.getPaymentId()));
-		//createDay.setUser(userDao.findById(createDayDto.getUserId()));
+		createDay.setUserId(createDayDto.getUserId());
 		this.createDayDao.save(createDay);
 		return new SuccessResult("Day Has Been Added!");
-	}
+	}}
 
 	@Override
 	public DataResult<List<CreateDay>> getAll() {
@@ -61,13 +70,12 @@ public class CreateDayManager implements CreateDayService {
 		return new SuccessDataResult<List<CreateDay>>(this.createDayDao.getByMonth(id));
 	}
 
-//	@Override
-//	public DataResult<List<CreateDay>> getByUserId(int id) {
-//		 return new
-//		 SuccessDataResult<List<CreateDay>>(this.createDayDao.getByUser_id(id));
-//
-//
-//	}
+	@Override
+	public DataResult<CreateDay> getByuserId(int id) {
+		 return new  SuccessDataResult<CreateDay>(this.createDayDao.getByuserId(id),"Başarılı Şekilde Getirildi");
+
+
+	}
 
 	@Override
 	public Result delete(int id) {
@@ -87,7 +95,7 @@ public class CreateDayManager implements CreateDayService {
 		createDay.setMonth(createDayUpdate.getMonth());
 		createDay.setUserQueu(createDayUpdate.getUserQueu());
 		createDay.setPayment(paymentDao.findById(createDayUpdate.getPaymentId()));
-	//	createDay.setUser(userDao.getById(createDayUpdate.getUserId()));
+	    createDay.setUserId(createDayUpdate.getUserId());
 		this.createDayDao.save(createDay);
 
 		return new SuccessResult("Başarıyla Güncellendi");
